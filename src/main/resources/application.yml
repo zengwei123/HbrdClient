@@ -1,0 +1,21 @@
+server:
+  port: 8089
+
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/terminus?characterEncoding=UTF-8
+        username: root
+        password: 992050
+        driver-class-name: com.mysql.jdbc.Driver
+    thymeleaf:
+        cache: false
+        prefix: classpath:/templates/
+        suffix: .html
+    mvc:
+        static-path-pattern: /static/**
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.hbrd.Dao
+#  configuration:
+#      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

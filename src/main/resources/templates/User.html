@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel='stylesheet' href='../static/mycss/main.css'/>
+        <link rel='stylesheet' href='../static/mycss/User/user.css'/>
+        <link rel='stylesheet' href='../static/font/style.css'/>
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="head">
+            <img src="../static/image/logo.png"/>
+            <div class="title"><a href="/Home"><span class="icon-av_timer">  </span>  实时监控</a></div>
+            <div class="title"><a href="/Report"><span class="icon-pie_chart">  </span>  统计报表</a></div>
+            <div class="title"><a href="/Management"><span class="icon-add_alert">  </span>  车辆管理</a></div>
+            <div class="action title"><a href="/*"><span class="icon-verified_user">  </span>  用户中心</a></div>
+            <i class="title"></i>
+            <input id="search" onkeyup="myFunction()" class="title" type="text" placeholder="搜索车牌号或序列号"/>
+            <!-- 搜索组件item -->
+            <ul id="myUL">
+            </ul>
+        </div>
+        <div id="body">
+            <div id="left">
+                <ul>
+                    <li onclick="ulitem(this,1)" class="lis li_action">登录密码</li>
+                    <li onclick="ulitem(this,2)" class="lis">控车密码</li>
+                    <li onclick="ulitem(this,3)" class="lis">账户信息</li>
+                    <li onclick="ulitem(this,4)" class="lis">操作记录</li>
+                </ul>
+            </div>
+            <div id="right">
+                <div  style="display: block">
+                    <p>
+                        <span style="color: #2b2b2b">原始登录密码</span><br/>
+                        <input id="right_user_input_1" class="right_input" type="password" placeholder="请输入登录密码" value="" /><br/><br/>
+                    </p>
+                    <p>
+                        <span style="color: #2b2b2b">新登录密码</span><br/>
+                        <input id="right_user_input_2" class="right_input" type="password" placeholder="大小写字母数字"/><br/><br/>
+                    </p>
+                    <p>
+                        <span style="color: #2b2b2b">验证新面密码</span><br/>
+                        <input id="right_user_input_3" class="right_input" type="password" placeholder="再次输入密码"/><br/><br/>
+                    </p>
+                    <p>
+                        <button id="userpass">确定</button>
+                    </p>
+                </div>
+                <div style="display: none">
+                    <p>
+                        <span style="color: #2b2b2b">原始控车密码</span><br/>
+                        <input id="right_control_input_1" class="right_input" type="password" placeholder="请输入控车密码"/><br/><br/>
+                    </p>
+                    <p>
+                        <span style="color: #2b2b2b">新控车密码</span><br/>
+                        <input id="right_control_input_2" class="right_input" type="password" placeholder="6位数字"/><br/><br/>
+                    </p>
+                    <p>
+                        <span style="color: #2b2b2b">验证新密码</span><br/>
+                        <input id="right_control_input_3" class="right_input" type="password" placeholder="再次输入密码"/><br/><br/>
+                    </p>
+                    <p>
+                        <button id="usercontrol">确定</button>
+                    </p>
+                </div>
+                <div style="display: none;margin-top: 0%">
+                    <div >
+                        <p><div class="right_3_div" style="height: 35px">已拥有车辆数量</div><span id="carhe">1</span></p><hr style="margin-right: 50%;"/>
+                        <p><div class="right_3_div" style="height: 35px">上次登录的时间</div><span id="Time">1</span></p><hr style="margin-right: 50%;"/>
+                        <p><div class="right_3_div" style="height: 35px">总控车次数</div><span id="controlhe">1</span></p><hr style="margin-right: 50%;"/>
+                        <p><div class="right_3_div" style="height: 35px">登录IP</div><span id="DriveIp">1</span></p>
+                    </div>
+                </div>
+                <div style="display: none;text-align: center;margin-top: 100px">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>操作指令</th>
+                                <th>IP地址</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <span id="userid" th:text="${session.userid}" style="display: none"></span>
+        <span id="username" th:text="${session.username}" style="display: none"></span>
+        <script src="../static/JS/jquery.min.js"></script>
+        <script src="../static/myjs/Jiaoyan.js"></script>
+        <script src="../static/myjs/main.js"></script>
+        <script src="../static/myjs/User/user.js"></script>
+    </body>
+</html>

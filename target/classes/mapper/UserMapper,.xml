@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbrd.Dao.UserDao">
+    <!--登录-->
+    <select id="Login"   resultType="com.hbrd.Model.User" >
+        select * from user WHERE UserName=#{param1} and UserLoginPass=#{param2}
+    </select>
+    <!--控车验证-->
+    <select id="ControlPass"   resultType="com.hbrd.Model.User" >
+        select * from user WHERE UserId=#{param1} and UserControlPass=#{param2}
+    </select>
+    <!--判断id是否存在-->
+    <select id="IsUser"   resultType="com.hbrd.Model.User" >
+        select * from user WHERE UserId=#{param1}
+    </select>
+    <!--修改登录密码-->
+    <update id="loginPassUpadte" parameterType="com.hbrd.Model.User">
+        UPDATE user set UserLoginPass=#{param1} where UserId=#{param2} and UserLoginPass=#{param3} and UserName=#{param4}
+    </update>
+    <!--修改控车密码-->
+    <update id="loginControlUpadte" parameterType="com.hbrd.Model.User">
+        UPDATE user set UserControlPass=#{param1} where UserId=#{param2} and UserControlPass=#{param3} and UserName=#{param4}
+    </update>
+    <select id="UserMessage" resultType="java.util.HashMap">
+        select
+            (select COUNT(*) from car where UserId=#{param1}) carhe,
+            (select count(*) from control where UserId=#{param1}) controlhe,
+            Time,
+            DriveIp
+        from drive
+          WHERE UserId=#{param1} ORDER BY DriveId DESC LIMIT 1;
+    </select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbrd.Dao.DriveDao">
+    <!--插入操作-->
+    <insert id="InsertDriver" parameterType="com.hbrd.Model.Drive">
+       INSERT INTO drive VALUES (null,#{UserId},#{DriveClass},#{DriveIp},#{Date},#{Time});
+    </insert>
+    <!--查询所有车辆-->
+    <select id="DriverList"   resultType="com.hbrd.Model.Drive" >
+        select * from drive WHERE UserId=#{param1}
+    </select>
+</mapper>

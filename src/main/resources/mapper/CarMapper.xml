@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbrd.Dao.CarDao">
+    <!--修改车辆Imsi-->
+    <update id="UpdateImsi" parameterType="com.hbrd.Model.Car">
+        UPDATE car set CarImsi=#{param1} where CarId=#{param2}
+    </update>
+    <!--查询所有车辆-->
+    <select id="CarList"   resultType="com.hbrd.Model.Car" >
+        select * from car WHERE UserId=#{param1}
+    </select>
+    <!--查询所有车辆-->
+    <select id="CarOne"   resultType="com.hbrd.Model.Car" >
+        select * from car WHERE UserId=#{param1} and CarID=#{param2}
+    </select>
+</mapper>

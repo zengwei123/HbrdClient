@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel='stylesheet' href='../static/mycss/main.css'/>
+        <link rel='stylesheet' href='../static/font/style.css'/>
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="head">
+            <img src="../static/image/logo.png"/>
+            <div class="title"><a href="/Home"><span class="icon-av_timer">  </span>  实时监控</a></div>
+            <div class="title"><a href="/Report"><span class="icon-pie_chart">  </span>  统计报表</a></div>
+            <div class="action title"><a href="#"><span class="icon-add_alert">  </span>  车辆管理</a></div>
+            <div class="title"><a href="/User"><span class="icon-verified_user">  </span>  用户中心</a></div>
+            <i class="title"></i>
+            <input id="search" onkeyup="myFunction()" class="title" type="text" placeholder="搜索车牌号或序列号"/>
+            <!-- 搜索组件item -->
+            <ul id="myUL">
+            </ul>
+        </div>
+        <span id="userid" th:text="${session.userid}" style="display: none"></span>
+        <span id="username" th:text="${session.username}" style="display: none"></span>
+        <script src="../static/JS/jquery.min.js"></script>
+        <script src="../static/myjs/main.js"></script>
+    </body>
+</html>
