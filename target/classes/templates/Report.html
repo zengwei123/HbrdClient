@@ -4,6 +4,7 @@
         <meta charset="UTF-8"/>
         <link rel='stylesheet' href='../static/mycss/main.css'/>
         <link rel='stylesheet' href='../static/font/style.css'/>
+        <link rel='stylesheet' href='../static/mycss/Report/report.css'/>
         <title>Title</title>
     </head>
     <body>
@@ -19,9 +20,22 @@
             <ul id="myUL">
             </ul>
         </div>
+        <div id="body">
+            <div id="menu">
+                <div>
+
+                </div>
+            </div>
+            <div id="chart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+            </div>
+        </div>
         <span id="userid" th:text="${session.userid}" style="display: none"></span>
         <span id="username" th:text="${session.username}" style="display: none"></span>
         <script src="../static/JS/jquery.min.js"></script>
         <script src="../static/myjs/main.js"></script>
+        <script src="../static/myjs/Report/report.js"></script>
     </body>
 </html>
