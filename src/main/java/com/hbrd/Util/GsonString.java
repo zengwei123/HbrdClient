@@ -3,12 +3,10 @@ package com.hbrd.Util;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.hbrd.Model.Car;
-import com.hbrd.Model.Drive;
-import com.hbrd.Model.Grouping;
-import com.hbrd.Model.Message;
+import com.hbrd.Model.*;
 
 import java.lang.reflect.Modifier;
+import java.util.HashMap;
 import java.util.List;
 
 public class GsonString {
@@ -56,5 +54,10 @@ public class GsonString {
     public static String DriveJson(List<Drive> listDrive){
         Gson gson = new Gson();
         return gson.toJson(listDrive,new TypeToken<List<Drive>>() {}.getType());
+    }
+
+    public static String ReportUserOnlineJson(List<Chart> listChart){
+        Gson gson = new Gson();
+        return gson.toJson(listChart,new TypeToken<List<Chart>>() {}.getType());
     }
 }

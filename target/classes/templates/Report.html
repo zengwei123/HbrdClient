@@ -27,15 +27,36 @@
                 </div>
             </div>
             <div id="chart">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="divs">
+                        <div id="Is_1">
+                            <img style="margin-top: 10%;margin-bottom: 5%" src="../static/image/勾.png"/><br/>
+                            <SPAN style="color: #0096FF;font-size: 40px;">2</SPAN><br/>
+                            <SPAN>当前在线车辆</SPAN>
+                        </div>
+                        <div id="Is_2">
+                            <img style="margin-top: 10%;margin-bottom: 5%" src="../static/image/报警.png"/><br/>
+                            <SPAN style="color: #0096FF;font-size: 40px;">2</SPAN><br/>
+                            <SPAN>本日报警数量</SPAN>
+                        </div>
+                        <div id="Is_3">
+                            <img style="margin-top: 10%;margin-bottom: 5%" src="../static/image/公里数.png"/><br/>
+                            <SPAN style="color: #0096FF;font-size: 40px;">2256KM</SPAN><br/>
+                            <SPAN>本日总行驶里程</SPAN>
+                        </div>
+                    </div>
+                    <div class="divs" id="Bar_message"></div>
+                    <div class="divs">
+                        <div id="Columnar"></div>
+                        <div id="Sector"></div>
+                    </div>
             </div>
         </div>
         <span id="userid" th:text="${session.userid}" style="display: none"></span>
         <span id="username" th:text="${session.username}" style="display: none"></span>
         <script src="../static/JS/jquery.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
         <script src="../static/myjs/main.js"></script>
         <script src="../static/myjs/Report/report.js"></script>
+        <script src="../static/myjs/Report/chartSet.js"></script>
     </body>
 </html>

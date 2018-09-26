@@ -9,4 +9,12 @@
     <select id="DescMessage"   resultType="com.hbrd.Model.Message" >
         select * from message WHERE CarId=#{param1}  ORDER BY MessageId DESC LIMIT 1
     </select>
+    <!--计算车辆每日在线的数量统计-->
+    <select id="ReportUserOnline" resultType="com.hbrd.Model.Chart">
+        <![CDATA[select count(distinct CarId) num,Date z FROM message WHERE CarId in (select CarId FROM car WHERE UserId=#{param1}) and IsStatus=1 and Date>=#{param3} and Date<=#{param2} group by Date]]>
+    </select>
+    <!--计算车辆每日在线的数量统计-->
+    <select id="ReportUserColumnar" resultType="com.hbrd.Model.Chart">
+        <![CDATA[select count(distinct CarId) num,Date z FROM message WHERE CarId in (select CarId FROM car WHERE UserId=#{param1}) and IsWarning>=1 and Date>=#{param3} and Date<=#{param2} group by Date]]>
+    </select>
 </mapper>
